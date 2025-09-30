@@ -27,17 +27,17 @@ while(true){
         case 1:
             resultat = numb_1 + numb_2;
             console.log("=", resultat);
-            history.push("{numb_1} + {numb_2} = $${resultat}");
+            history.push(`${numb_1} + ${numb_2} = ${resultat}`);
             break;
         case 2:
             resultat = numb_1 - numb_2;
             console.log("=", resultat);
-            history.push("{numb_1} - {numb_2} = {resultat}");
+            history.push(`${numb_1} - ${numb_2} = ${resultat}`);
             break;
         case 3:
             resultat = numb_1 * numb_2;
             console.log("=", resultat);
-            history.push("{numb_1} * {numb_2} = {resultat}");
+            history.push(`${numb_1} * ${numb_2} = ${resultat}`);
             break;
         case 4:
             if(numb_2 === 0){
@@ -45,7 +45,35 @@ while(true){
             } else {
                 resultat = numb_1 / numb_2;
                 console.log("=", resultat);
-                history.push("{numb_1} / {numb_2} = {resultat}");
+                history.push(`${numb_1} / ${numb_2} = ${resultat}`);
             }
-        }
+            break;
+        case 5:
+            resultat = Math.pow(numb_1, numb_2);
+            console.log("=", resultat);
+            history.push(`${numb_1} ^ ${numb_2} = ${resultat}`);
+            break;
+        case 6:
+            resultat = Math.sqrt(numb_1);
+            console.log(`√${numb_1} =`, resultat);
+            history.push(`√${numb_1} = ${resultat}`);
+            break;
+        case 7:
+            function Factorielle(n) {
+                let res = 1;
+                for (let i = 1; i <= n; i++) {
+                    res *= i;
+                }
+                return res;
+            }
+            resultat = Factorielle(numb_1);
+            console.log(`${numb_1}! =`, resultat);
+            history.push(`${numb_1}! = ${resultat}`);
+            break;
+        case 8 :
+            console.log("Historique :", history);
+            break;
+        default :
+            console.log("Choix erroné");
     }
+}
